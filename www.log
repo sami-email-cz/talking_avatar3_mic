@@ -1,0 +1,61 @@
+yarn run v1.22.19
+$ PORT=3006 react-scripts start
+Starting the development server...
+
+Compiled with warnings.
+
+Failed to parse source map from '/var/www/html/talking_avatar3_mic/node_modules/@speechly/speech-recognition-polyfill/src/createSpeechRecognition.ts' file: Error: ENOENT: no such file or directory, open '/var/www/html/talking_avatar3_mic/node_modules/@speechly/speech-recognition-polyfill/src/createSpeechRecognition.ts'
+
+Failed to parse source map from '/var/www/html/talking_avatar3_mic/node_modules/@speechly/speech-recognition-polyfill/src/index.ts' file: Error: ENOENT: no such file or directory, open '/var/www/html/talking_avatar3_mic/node_modules/@speechly/speech-recognition-polyfill/src/index.ts'
+
+Failed to parse source map from '/var/www/html/talking_avatar3_mic/node_modules/@speechly/speech-recognition-polyfill/src/types.ts' file: Error: ENOENT: no such file or directory, open '/var/www/html/talking_avatar3_mic/node_modules/@speechly/speech-recognition-polyfill/src/types.ts'
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in ./node_modules/@speechly/speech-recognition-polyfill/dist/createSpeechRecognition.js
+Module Warning (from ./node_modules/source-map-loader/dist/cjs.js):
+Failed to parse source map from '/var/www/html/talking_avatar3_mic/node_modules/@speechly/speech-recognition-polyfill/src/createSpeechRecognition.ts' file: Error: ENOENT: no such file or directory, open '/var/www/html/talking_avatar3_mic/node_modules/@speechly/speech-recognition-polyfill/src/createSpeechRecognition.ts'
+
+WARNING in ./node_modules/@speechly/speech-recognition-polyfill/dist/index.js
+Module Warning (from ./node_modules/source-map-loader/dist/cjs.js):
+Failed to parse source map from '/var/www/html/talking_avatar3_mic/node_modules/@speechly/speech-recognition-polyfill/src/index.ts' file: Error: ENOENT: no such file or directory, open '/var/www/html/talking_avatar3_mic/node_modules/@speechly/speech-recognition-polyfill/src/index.ts'
+
+WARNING in ./node_modules/@speechly/speech-recognition-polyfill/dist/types.js
+Module Warning (from ./node_modules/source-map-loader/dist/cjs.js):
+Failed to parse source map from '/var/www/html/talking_avatar3_mic/node_modules/@speechly/speech-recognition-polyfill/src/types.ts' file: Error: ENOENT: no such file or directory, open '/var/www/html/talking_avatar3_mic/node_modules/@speechly/speech-recognition-polyfill/src/types.ts'
+
+webpack compiled with 3 warnings
+Compiling...
+Compiled with warnings.
+
+Failed to parse source map from '/var/www/html/talking_avatar3_mic/node_modules/@speechly/speech-recognition-polyfill/src/createSpeechRecognition.ts' file: Error: ENOENT: no such file or directory, open '/var/www/html/talking_avatar3_mic/node_modules/@speechly/speech-recognition-polyfill/src/createSpeechRecognition.ts'
+
+Failed to parse source map from '/var/www/html/talking_avatar3_mic/node_modules/@speechly/speech-recognition-polyfill/src/index.ts' file: Error: ENOENT: no such file or directory, open '/var/www/html/talking_avatar3_mic/node_modules/@speechly/speech-recognition-polyfill/src/index.ts'
+
+Failed to parse source map from '/var/www/html/talking_avatar3_mic/node_modules/@speechly/speech-recognition-polyfill/src/types.ts' file: Error: ENOENT: no such file or directory, open '/var/www/html/talking_avatar3_mic/node_modules/@speechly/speech-recognition-polyfill/src/types.ts'
+
+[eslint] 
+src/App.js
+  Line 9:1:  Assign arrow function to a variable before exporting as module default  import/no-anonymous-default-export
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in ./node_modules/@speechly/speech-recognition-polyfill/dist/createSpeechRecognition.js
+Module Warning (from ./node_modules/source-map-loader/dist/cjs.js):
+Failed to parse source map from '/var/www/html/talking_avatar3_mic/node_modules/@speechly/speech-recognition-polyfill/src/createSpeechRecognition.ts' file: Error: ENOENT: no such file or directory, open '/var/www/html/talking_avatar3_mic/node_modules/@speechly/speech-recognition-polyfill/src/createSpeechRecognition.ts'
+
+WARNING in ./node_modules/@speechly/speech-recognition-polyfill/dist/index.js
+Module Warning (from ./node_modules/source-map-loader/dist/cjs.js):
+Failed to parse source map from '/var/www/html/talking_avatar3_mic/node_modules/@speechly/speech-recognition-polyfill/src/index.ts' file: Error: ENOENT: no such file or directory, open '/var/www/html/talking_avatar3_mic/node_modules/@speechly/speech-recognition-polyfill/src/index.ts'
+
+WARNING in ./node_modules/@speechly/speech-recognition-polyfill/dist/types.js
+Module Warning (from ./node_modules/source-map-loader/dist/cjs.js):
+Failed to parse source map from '/var/www/html/talking_avatar3_mic/node_modules/@speechly/speech-recognition-polyfill/src/types.ts' file: Error: ENOENT: no such file or directory, open '/var/www/html/talking_avatar3_mic/node_modules/@speechly/speech-recognition-polyfill/src/types.ts'
+
+WARNING in [eslint] 
+src/App.js
+  Line 9:1:  Assign arrow function to a variable before exporting as module default  import/no-anonymous-default-export
+
+webpack compiled with 4 warnings

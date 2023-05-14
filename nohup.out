@@ -1,0 +1,173 @@
+
+> ttt@0.1.0 start
+> react-scripts start
+
+Browserslist: caniuse-lite is outdated. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+(node:15195) [DEP_WEBPACK_DEV_SERVER_ON_AFTER_SETUP_MIDDLEWARE] DeprecationWarning: 'onAfterSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+(node:15195) [DEP_WEBPACK_DEV_SERVER_ON_BEFORE_SETUP_MIDDLEWARE] DeprecationWarning: 'onBeforeSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+Starting the development server...
+
+Compiled successfully!
+
+You can now view ttt in the browser.
+
+  Local:            http://localhost:3000
+  On Your Network:  http://10.186.0.2:3000
+
+Note that the development build is not optimized.
+To create a production build, use yarn build.
+
+webpack compiled successfully
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/App.js
+  Line 188:69:  React Hook useMemo has a missing dependency: 'gltf.scene'. Either include it or remove the dependency array                                                                                                                                                                                                                            react-hooks/exhaustive-deps
+  Line 216:6:   React Hook useEffect has missing dependencies: 'morphTargetDictionaryBody', 'morphTargetDictionaryLowerTeeth', 'setAudioSource', 'setSpeak', and 'text'. Either include them or remove the dependency array. If 'setAudioSource' changes too often, find the parent component that defines it and wrap that definition in useCallback  react-hooks/exhaustive-deps
+  Line 253:6:   React Hook useEffect has missing dependencies: 'idleClips', 'mixer', and 'morphTargetDictionaryBody'. Either include them or remove the dependency array                                                                                                                                                                               react-hooks/exhaustive-deps
+  Line 268:6:   React Hook useEffect has missing dependencies: 'clips' and 'mixer'. Either include them or remove the dependency array                                                                                                                                                                                                                 react-hooks/exhaustive-deps
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/App.js
+  Line 188:69:  React Hook useMemo has a missing dependency: 'gltf.scene'. Either include it or remove the dependency array                                                                                                                                                                                                                            react-hooks/exhaustive-deps
+  Line 216:6:   React Hook useEffect has missing dependencies: 'morphTargetDictionaryBody', 'morphTargetDictionaryLowerTeeth', 'setAudioSource', 'setSpeak', and 'text'. Either include them or remove the dependency array. If 'setAudioSource' changes too often, find the parent component that defines it and wrap that definition in useCallback  react-hooks/exhaustive-deps
+  Line 253:6:   React Hook useEffect has missing dependencies: 'idleClips', 'mixer', and 'morphTargetDictionaryBody'. Either include them or remove the dependency array                                                                                                                                                                               react-hooks/exhaustive-deps
+  Line 268:6:   React Hook useEffect has missing dependencies: 'clips' and 'mixer'. Either include them or remove the dependency array                                                                                                                                                                                                                 react-hooks/exhaustive-deps
+
+webpack compiled with 1 warning
+Compiling...
+Failed to compile.
+
+[eslint] 
+src/App.js
+Syntax error: Unexpected token (324:53) (324:53)
+ERROR in ./src/App.js
+Module build failed (from ./node_modules/babel-loader/lib/index.js):
+SyntaxError: /var/www/html/talking_avatar/src/App.js: Unexpected token (324:53)
+
+  322 |         <textarea rows={4} type="text" style={STYLES.text} value={text} onChange={(e) => setText(e.target.value.substring(0, 200))} />
+  323 |         <button onClick={() => setSpeak(true)} style={STYLES.speak}> { speak? 'Running...': 'Speak' }</button>
+> 324 |         <p><audio id="audio" controls></audio></p>  <!-- MS -->
+      |                                                      ^
+  325 |       </div>
+  326 |
+  327 |       <ReactAudioPlayer
+    at instantiate (/var/www/html/talking_avatar/node_modules/@babel/parser/lib/index.js:72:32)
+    at constructor (/var/www/html/talking_avatar/node_modules/@babel/parser/lib/index.js:359:12)
+    at Object.raise (/var/www/html/talking_avatar/node_modules/@babel/parser/lib/index.js:3339:19)
+    at Object.unexpected (/var/www/html/talking_avatar/node_modules/@babel/parser/lib/index.js:3377:16)
+    at Object.jsxParseIdentifier (/var/www/html/talking_avatar/node_modules/@babel/parser/lib/index.js:7783:12)
+    at Object.jsxParseNamespacedName (/var/www/html/talking_avatar/node_modules/@babel/parser/lib/index.js:7793:23)
+    at Object.jsxParseElementName (/var/www/html/talking_avatar/node_modules/@babel/parser/lib/index.js:7804:21)
+    at Object.jsxParseOpeningElementAt (/var/www/html/talking_avatar/node_modules/@babel/parser/lib/index.js:7903:22)
+    at Object.jsxParseElementAt (/var/www/html/talking_avatar/node_modules/@babel/parser/lib/index.js:7935:33)
+    at Object.jsxParseElementAt (/var/www/html/talking_avatar/node_modules/@babel/parser/lib/index.js:7951:32)
+
+ERROR in [eslint] 
+src/App.js
+  Line 324:53:  Parsing error: Unexpected token (324:53)
+
+webpack compiled with 2 errors
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/App.js
+  Line 188:69:  React Hook useMemo has a missing dependency: 'gltf.scene'. Either include it or remove the dependency array                                                                                                                                                                                                                            react-hooks/exhaustive-deps
+  Line 216:6:   React Hook useEffect has missing dependencies: 'morphTargetDictionaryBody', 'morphTargetDictionaryLowerTeeth', 'setAudioSource', 'setSpeak', and 'text'. Either include them or remove the dependency array. If 'setAudioSource' changes too often, find the parent component that defines it and wrap that definition in useCallback  react-hooks/exhaustive-deps
+  Line 253:6:   React Hook useEffect has missing dependencies: 'idleClips', 'mixer', and 'morphTargetDictionaryBody'. Either include them or remove the dependency array                                                                                                                                                                               react-hooks/exhaustive-deps
+  Line 268:6:   React Hook useEffect has missing dependencies: 'clips' and 'mixer'. Either include them or remove the dependency array                                                                                                                                                                                                                 react-hooks/exhaustive-deps
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/App.js
+  Line 188:69:  React Hook useMemo has a missing dependency: 'gltf.scene'. Either include it or remove the dependency array                                                                                                                                                                                                                            react-hooks/exhaustive-deps
+  Line 216:6:   React Hook useEffect has missing dependencies: 'morphTargetDictionaryBody', 'morphTargetDictionaryLowerTeeth', 'setAudioSource', 'setSpeak', and 'text'. Either include them or remove the dependency array. If 'setAudioSource' changes too often, find the parent component that defines it and wrap that definition in useCallback  react-hooks/exhaustive-deps
+  Line 253:6:   React Hook useEffect has missing dependencies: 'idleClips', 'mixer', and 'morphTargetDictionaryBody'. Either include them or remove the dependency array                                                                                                                                                                               react-hooks/exhaustive-deps
+  Line 268:6:   React Hook useEffect has missing dependencies: 'clips' and 'mixer'. Either include them or remove the dependency array                                                                                                                                                                                                                 react-hooks/exhaustive-deps
+
+webpack compiled with 1 warning
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/App.js
+  Line 188:69:  React Hook useMemo has a missing dependency: 'gltf.scene'. Either include it or remove the dependency array                                                                                                                                                                                                                            react-hooks/exhaustive-deps
+  Line 216:6:   React Hook useEffect has missing dependencies: 'morphTargetDictionaryBody', 'morphTargetDictionaryLowerTeeth', 'setAudioSource', 'setSpeak', and 'text'. Either include them or remove the dependency array. If 'setAudioSource' changes too often, find the parent component that defines it and wrap that definition in useCallback  react-hooks/exhaustive-deps
+  Line 253:6:   React Hook useEffect has missing dependencies: 'idleClips', 'mixer', and 'morphTargetDictionaryBody'. Either include them or remove the dependency array                                                                                                                                                                               react-hooks/exhaustive-deps
+  Line 268:6:   React Hook useEffect has missing dependencies: 'clips' and 'mixer'. Either include them or remove the dependency array                                                                                                                                                                                                                 react-hooks/exhaustive-deps
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/App.js
+  Line 188:69:  React Hook useMemo has a missing dependency: 'gltf.scene'. Either include it or remove the dependency array                                                                                                                                                                                                                            react-hooks/exhaustive-deps
+  Line 216:6:   React Hook useEffect has missing dependencies: 'morphTargetDictionaryBody', 'morphTargetDictionaryLowerTeeth', 'setAudioSource', 'setSpeak', and 'text'. Either include them or remove the dependency array. If 'setAudioSource' changes too often, find the parent component that defines it and wrap that definition in useCallback  react-hooks/exhaustive-deps
+  Line 253:6:   React Hook useEffect has missing dependencies: 'idleClips', 'mixer', and 'morphTargetDictionaryBody'. Either include them or remove the dependency array                                                                                                                                                                               react-hooks/exhaustive-deps
+  Line 268:6:   React Hook useEffect has missing dependencies: 'clips' and 'mixer'. Either include them or remove the dependency array                                                                                                                                                                                                                 react-hooks/exhaustive-deps
+
+webpack compiled with 1 warning
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/App.js
+  Line 188:69:  React Hook useMemo has a missing dependency: 'gltf.scene'. Either include it or remove the dependency array                                                                                                                                                                                                                            react-hooks/exhaustive-deps
+  Line 216:6:   React Hook useEffect has missing dependencies: 'morphTargetDictionaryBody', 'morphTargetDictionaryLowerTeeth', 'setAudioSource', 'setSpeak', and 'text'. Either include them or remove the dependency array. If 'setAudioSource' changes too often, find the parent component that defines it and wrap that definition in useCallback  react-hooks/exhaustive-deps
+  Line 253:6:   React Hook useEffect has missing dependencies: 'idleClips', 'mixer', and 'morphTargetDictionaryBody'. Either include them or remove the dependency array                                                                                                                                                                               react-hooks/exhaustive-deps
+  Line 268:6:   React Hook useEffect has missing dependencies: 'clips' and 'mixer'. Either include them or remove the dependency array                                                                                                                                                                                                                 react-hooks/exhaustive-deps
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/App.js
+  Line 188:69:  React Hook useMemo has a missing dependency: 'gltf.scene'. Either include it or remove the dependency array                                                                                                                                                                                                                            react-hooks/exhaustive-deps
+  Line 216:6:   React Hook useEffect has missing dependencies: 'morphTargetDictionaryBody', 'morphTargetDictionaryLowerTeeth', 'setAudioSource', 'setSpeak', and 'text'. Either include them or remove the dependency array. If 'setAudioSource' changes too often, find the parent component that defines it and wrap that definition in useCallback  react-hooks/exhaustive-deps
+  Line 253:6:   React Hook useEffect has missing dependencies: 'idleClips', 'mixer', and 'morphTargetDictionaryBody'. Either include them or remove the dependency array                                                                                                                                                                               react-hooks/exhaustive-deps
+  Line 268:6:   React Hook useEffect has missing dependencies: 'clips' and 'mixer'. Either include them or remove the dependency array                                                                                                                                                                                                                 react-hooks/exhaustive-deps
+
+webpack compiled with 1 warning
+Compiling...
+Failed to compile.
+
+[eslint] 
+src/App.js
+Syntax error: Expected corresponding JSX closing tag for <img>. (325:6) (325:6)
+ERROR in ./src/App.js
+Module build failed (from ./node_modules/babel-loader/lib/index.js):
+SyntaxError: /var/www/html/talking_avatar/src/App.js: Expected corresponding JSX closing tag for <img>. (325:6)
+
+  323 |         <button onClick={() => setSpeak(true)} style={STYLES.speak}> { speak? 'Running...': 'Speak' }</button>
+  324 |          <img id="record" src="mic128.png" onclick="toggleRecording(this);">
+> 325 |       </div>
+      |       ^
+  326 |
+  327 |       <ReactAudioPlayer
+  328 |         src={audioSource}
+    at instantiate (/var/www/html/talking_avatar/node_modules/@babel/parser/lib/index.js:72:32)
+    at constructor (/var/www/html/talking_avatar/node_modules/@babel/parser/lib/index.js:359:12)
+    at Object.raise (/var/www/html/talking_avatar/node_modules/@babel/parser/lib/index.js:3339:19)
+    at Object.jsxParseElementAt (/var/www/html/talking_avatar/node_modules/@babel/parser/lib/index.js:7989:16)
+    at Object.jsxParseElementAt (/var/www/html/talking_avatar/node_modules/@babel/parser/lib/index.js:7951:32)
+    at Object.jsxParseElementAt (/var/www/html/talking_avatar/node_modules/@babel/parser/lib/index.js:7951:32)
+    at Object.jsxParseElement (/var/www/html/talking_avatar/node_modules/@babel/parser/lib/index.js:8020:17)
+    at Object.parseExprAtom (/var/www/html/talking_avatar/node_modules/@babel/parser/lib/index.js:8034:19)
+    at Object.parseExprSubscripts (/var/www/html/talking_avatar/node_modules/@babel/parser/lib/index.js:12648:23)
+    at Object.parseUpdate (/var/www/html/talking_avatar/node_modules/@babel/parser/lib/index.js:12627:21)
+
+ERROR in [eslint] 
+src/App.js
+  Line 325:6:  Parsing error: Expected corresponding JSX closing tag for <img>. (325:6)
+
+webpack compiled with 2 errors
