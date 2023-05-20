@@ -16,6 +16,7 @@ const DictSimple = () => {
     {
       command: '*',
       callback : ( command  ) => setMessage(`${command}`
+                 //console.log(command) ;
                    //makeSpeech(`${command}`)
                    /*.then( response => {
                    })
@@ -61,6 +62,8 @@ const startListening = () => SpeechRecognition.startListening({ continuous: true
       <button onClick={startListening}>Start</button>
       <button onClick={SpeechRecognition.stopListening}>Stop</button>
       <button onClick={resetTranscript}>Reset</button>
+      
+      
       <p style={STYLES.text}>{message}</p>
       <p style={STYLES.text}>{transcript}</p>
     </div>
