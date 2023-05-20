@@ -7,10 +7,15 @@ const SpeechlySpeechRecognition = createSpeechlySpeechRecognition(appId);
 SpeechRecognition.applyPolyfill(SpeechlySpeechRecognition);
 
 //export default () => {
-const DictSimple = () => {
-  const [message, setMessage] = useState('');
+const DictSimple = ( ) => {
+  c
   const commands = [
-    {
+     {
+      command: '*',
+      callback: (name) => setMessage(`HHHHHHi ${name}!`),
+      matchInterim: true
+    } 
+    /*{
       command: '* is my name',
       callback: (name) => setMessage(`Hi ${name}!`),
       matchInterim: true
@@ -27,7 +32,7 @@ const DictSimple = () => {
     {
       command: 'Pass the salt (please)',
       callback: () => setMessage('My pleasure')
-    }
+    }*/
   ];
   const {
     transcript,
@@ -36,6 +41,7 @@ const DictSimple = () => {
     isMicrophoneAvailable
   } = useSpeechRecognition({ commands });
   const listenContinuously = () => SpeechRecognition.startListening({ continuous: true });
+  const [data, setData] = useState("Hi"); 
 
   if (!browserSupportsSpeechRecognition) {
     return <span>No browser support</span>
@@ -44,6 +50,16 @@ const DictSimple = () => {
   if (!isMicrophoneAvailable) {
     return <span>Please allow access to the microphone</span>
   }
+  
+    const handleSubmit = () => {
+    var arr = transcript.split("-");
+    for (var i = 0; i < transcript.length; i++) {
+      if (arr[i]) {
+        console.log(arr[i]);
+        setData(arr[i]);
+      }
+    }
+  };
 
   return (
     <div>
@@ -53,7 +69,18 @@ const DictSimple = () => {
         onMouseDown={listenContinuously}
         onTouchEnd={SpeechRecognition.stopListening}
         onMouseUp={SpeechRecognition.stopListening}
+        onClick={handleSubmit}
       >Hold to talk</button>
+        <p>
+        <input
+          name="data"
+          value={data}
+          defaultValue={data}
+          onChange={(e) => {
+            setData(e.target.value);
+          }}
+        />
+      </p>
       <p>T {transcript}</p>
       <p>M {message}</p>
     </div>
