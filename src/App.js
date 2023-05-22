@@ -275,7 +275,7 @@ function Avatar({
   // Play animation clips when available
   useEffect(() => {
     if (playing === false) return;
-
+    console.log("playing CLIP");
     _.each(clips, (clip) => {
       let clipAction = mixer.clipAction(clip);
       clipAction.setLoop(THREE.LoopOnce);
@@ -402,6 +402,9 @@ function App() {
   // Player is read
   function playerReady(e) {
     console.log("PlayerReady " + audioSource);
+    document.getElementById("player").pause();
+    document.getElementById("player").currentTime = 0;
+    document.getElementById("player").play();
     audioPlayer.current.audioEl.current.play();
     setPlaying(true);
   }
@@ -434,16 +437,32 @@ function App() {
           <button onClick={handleDisableSpeechClick}>Disable speech</button>
           <br />
           <button onClick={resetTranscript}>Reset</button>
+          <audio id="player" src={audioSource} />
         </div>
       </div>
-
-      <ReactPlayer url={audioSource} />
-      {/*<ReactAudioPlayer
+      {/*<ReactPlayer
+        ref={audioPlayer}
+        className="react-player"
+        width="100%"
+        height="100%"
+        url={audioSource}
+        onReady={() => console.log("onReady")}
+        onStart={() => console.log("onStart")}
+        onPlay={playerReady}
+        onEnded={playerEnded}
+        onError={(e) => console.log("onError", e)}
+        //onProgress={this.handleProgress}
+        //onDuration={this.handleDuration}
+      />*/}
+      <ReactAudioPlayer
         src={audioSource}
         ref={audioPlayer}
         onEnded={playerEnded}
-        onCanPlayThrough={playerReady}
-      />*/}
+        onCanPlay={playerReady} // Through
+        style={{ width: "100%", backgroundColor: "#fff", color: "#fff" }}
+        controls
+        autoPlay
+      />
 
       {/* <Stats /> */}
       <Canvas
