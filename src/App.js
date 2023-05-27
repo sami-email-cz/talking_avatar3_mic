@@ -32,6 +32,21 @@ import SpeechRecognition, {
 } from "react-speech-recognition";
 import { createSpeechlySpeechRecognition } from "@speechly/speech-recognition-polyfill";
 
+import microPhoneIcon from "./logo192.png";
+
+// CHATBOT start
+import BotMessage from "./components/BotMessage";
+import UserMessage from "./components/UserMessage";
+import Messages from "./components/Messages";
+import Input from "./components/Input";
+
+import API from "./ChatbotAPI";
+
+import "./styles_chatbot.css";
+import Header from "./components/Header";
+
+// CHATBOT END
+
 const appId = "3c30f30b-db67-4d1d-aa78-ed664d06bcd1";
 const SpeechlySpeechRecognition = createSpeechlySpeechRecognition(appId);
 SpeechRecognition.applyPolyfill(SpeechlySpeechRecognition);
@@ -39,6 +54,42 @@ SpeechRecognition.applyPolyfill(SpeechlySpeechRecognition);
 const _ = require("lodash");
 
 const host = "https://talk.3dmemories.eu";
+
+function Chatbot() {
+  const [messages, setMessages] = useState([]);
+
+  useEffect(() => {
+    async function loadWelcomeMessage() {
+      setMessages([
+        <BotMessage
+          key="0"
+          fetchMessage={async () => await API.GetChatbotResponse("hi")}
+        />
+      ]);
+    }
+    loadWelcomeMessage();
+  }, []);
+
+  const send = async text => {
+    const newMessages = messages.concat(
+      <UserMessage key={messages.length + 1} text={text} />,
+      <BotMessage
+        key={messages.length + 2}
+        fetchMessage={async () => await API.GetChatbotResponse(text)}
+      />
+    );
+    setMessages(newMessages);
+  };
+
+  return (
+    <div className="chatbot">
+      <Header />
+      <Messages messages={messages} />
+      <Input onSend={send} />
+    </div>
+  );
+}
+
 
 function Avatar({
   avatar_url,
@@ -332,6 +383,8 @@ function App() {
   const [playing, setPlaying] = useState(false);
   // START mikrofon
   const [message, setMessage] = useState("");
+  const [isListening, setIsListening] = useState(false);
+  const microphoneRef = useRef(null);
 
   const {
     transcript,
@@ -353,6 +406,24 @@ function App() {
   if (!isMicrophoneAvailable) {
     return <span>Please allow access to the microphone</span>;
   }
+
+  const handleListing = () => {
+    setIsListening(true);
+    microphoneRef.current.classList.add("listening");
+    SpeechRecognition.startListening({
+      continuous: true,
+    });
+  };
+  const stopHandle = () => {
+    setIsListening(false);
+    microphoneRef.current.classList.remove("listening");
+    SpeechRecognition.stopListening();
+    setSpeak(true);
+  };
+  const handleReset = () => {
+    stopHandle();
+    resetTranscript();
+  };
 
   const handleSubmit = () => {
     setSpeak(true);
@@ -438,6 +509,31 @@ function App() {
           <br />
           <button onClick={resetTranscript}>Reset</button>
           <audio id="player" src={audioSource} />
+          <div className="mircophone-container">
+            <div
+              className="microphone-icon-container"
+              ref={microphoneRef}
+              onClick={handleListing}
+            >
+              <img src={microPhoneIcon} className="microphone-icon" />
+            </div>
+            <div className="microphone-status">
+              {isListening ? "Listening........." : "Click to start Listening"}
+            </div>
+            {isListening && (
+              <button className="microphone-stop btn" onClick={stopHandle}>
+                Stop
+              </button>
+            )}
+          </div>
+          {transcript && (
+            <div className="microphone-result-container">
+              <div className="microphone-result-text">{transcript}</div>
+              <button className="microphone-reset btn" onClick={handleReset}>
+                Reset
+              </button>
+            </div>
+          )}
         </div>
       </div>
       {/*<ReactPlayer
@@ -489,7 +585,7 @@ function App() {
         </Suspense>
 
         <Suspense fallback={null}>
-          <Avatar
+         <Avatar
             avatar_url="/model.glb"
             speak={speak}
             setSpeak={setSpeak}
@@ -497,8 +593,11 @@ function App() {
             setAudioSource={setAudioSource}
             playing={playing}
           />
-        </Suspense>
+          </Suspense>
       </Canvas>
+        <Suspense fallback={null}>
+          <Chatbot />
+        </Suspense>
       <Loader dataInterpolation={(p) => `Loading... please wait`} />
     </div>
   );
